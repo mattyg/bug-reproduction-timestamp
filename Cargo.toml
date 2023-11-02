@@ -1,0 +1,18 @@
+[profile.dev]
+opt-level = "z"
+
+[profile.release]
+opt-level = "z"
+
+[workspace]
+members = ["dnas/*/zomes/coordinator/*"]
+resolver = "2"
+
+[workspace.dependencies]
+hdi = { branch = "develop-0.2", git = "https://github.com/holochain/holochain", module = "crates/hdi" }
+hdk = { branch = "develop-0.2", git = "https://github.com/holochain/holochain", module = "crates/hdk" }
+serde = "=1.0.166"
+holochain = { branch = "develop-0.2", default-features = false, features = ["test_utils"], git = "https://github.com/holochain/holochain", module = "crates/holochain" }
+
+[workspace.dependencies.posts]
+path = "dnas/demo/zomes/coordinator/posts"
